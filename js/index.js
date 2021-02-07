@@ -69,14 +69,18 @@ function updateClockFace(time) {  //можна підключити плагін
     pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
   const secs = 
     pad(Math.floor((time % (1000 * 60)) / 1000));
-    
-  // console.log(`${days}:${hours}:${mins}:${secs}`);
 
-  //refs.clockFace.textContent = `${days}:${hours}:${mins}:${secs}`;
-  refs.days.textContent = `${days}`;
-  refs.hours.textContent = `${hours}`;
-  refs.mins.textContent = `${mins}`;
-  refs.secs.textContent = `${secs}`;
+  
+      function displayTime(days,hours,mins,secs) {
+        //refs.clockFace.textContent = `${days}:${hours}:${mins}:${secs}`;
+        refs.days.textContent = `${days}`;
+        refs.hours.textContent = `${hours}`;
+        refs.mins.textContent = `${mins}`;
+        refs.secs.textContent = `${secs}`;
+      }
+
+      displayTime(days,hours,mins,secs);
+  
 }
 
 function pad(value) {
